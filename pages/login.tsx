@@ -18,7 +18,10 @@ const Login: NextPage = () => {
                 localStorage.setItem('access_token', res.data.access_token);
             }
         } catch (err: any) {
-            setError(err.response.data.message);
+            if (err.response.data) {
+                setError(err.response.data.message);
+            }
+            console.log(err);
         }
     }
 
@@ -35,7 +38,7 @@ const Login: NextPage = () => {
                 }}
             />
             <br />
-            <label htmlFor="password"> Password</label>
+            <label htmlFor="password">Password</label>
             <br />
             <input
                 type="password"
