@@ -20,6 +20,9 @@ const Login: NextPage = () => {
                     withCredentials: true,
                 }
             );
+            await axios
+                .get('/checkauth', { withCredentials: true })
+                .then((res) => console.log('authenticated'));
         } catch (err: any) {
             setError(err.response.data.message);
         }
