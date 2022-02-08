@@ -10,19 +10,13 @@ const Login: NextPage = () => {
     async function handleLogin(event: FormEvent) {
         event.preventDefault();
         try {
-            await axios.post(
-                '/login',
-                {
-                    email: email,
-                    password: password,
-                },
-                {
-                    withCredentials: true,
-                }
-            );
-            await axios
-                .get('/checkauth', { withCredentials: true })
-                .then((res) => console.log('authenticated'));
+            const res = await axios.post('/login', {
+                email: email,
+                password: password,
+            });
+            if (res.status == 200) {
+                localStorage.setItem('access_token', res.data.access_token);
+            }
         } catch (err: any) {
             setError(err.response.data.message);
         }
