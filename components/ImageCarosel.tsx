@@ -6,13 +6,19 @@ interface ImageCarouselProps {
 }
 export const ImageCarosel = ({ images }: ImageCarouselProps) => {
     return (
-        <div style={{ display: 'flex', width: '80%', height: '100%' }}>
+        <div
+            style={{
+                display: 'flex',
+                width: '90%',
+                height: '90%',
+            }}
+        >
             {images.map((image: IImage) => (
                 <div
                     key={image._id}
                     style={{
-                        width: '80%',
-                        height: '80%',
+                        width: '100%',
+                        height: '100%',
                         position: 'relative',
                         margin: '0.5%',
                     }}
