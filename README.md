@@ -1,4 +1,6 @@
 # The Vault
+[![Node.js CI](https://github.com/menghaoyu2002/theVault-frontend/actions/workflows/node.js.yml/badge.svg)](https://github.com/menghaoyu2002/theVault-frontend/actions/workflows/node.js.yml)
+
 The frontend for theVault. 
 
 Made with NextJS and ReactJS. 
