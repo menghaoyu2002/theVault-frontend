@@ -1,5 +1,5 @@
 # The Vault
-The frontend application for theVault. 
+The frontend for theVault. 
 
 Made with NextJS and ReactJS. 
 
