@@ -29,6 +29,9 @@ export const ImageCarosel = ({ images }: ImageCarouselProps) => {
                         objectFit="cover"
                         layout="fill"
                         quality="100"
+                        onClick={() =>
+                            (document.location.href = `/images/${image._id}`)
+                        }
                     />
                 </div>
             ))}
