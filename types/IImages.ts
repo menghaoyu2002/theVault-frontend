@@ -4,8 +4,7 @@ export default interface IImage {
     title: string;
     description: string;
     uploadDate: Date;
-    likes: number;
-    dislikes: number;
+    viewCount: number;
     source: string;
     author: { _id: string; username: string };
 }

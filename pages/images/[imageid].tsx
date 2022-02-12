@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import IImage from '../../types/IImages';
 import Image from 'next/image';
-import { relative } from 'path';
 
 const ImagePage = () => {
     const { imageid } = useRouter().query;
@@ -24,7 +23,16 @@ const ImagePage = () => {
     if (!loading) {
         if (image) {
             return (
-                <div style={{ display: 'flex' }}>
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8rem',
+                        height: '100vh',
+                        width: '100vw',
+                    }}
+                >
                     <div
                         style={{
                             width: '40rem',
@@ -35,16 +43,27 @@ const ImagePage = () => {
                         <Image
                             src={image.source}
                             alt={image.title}
-                            objectFit="cover"
+                            objectFit="contain"
                             layout="fill"
                             quality="100"
                         />
                     </div>
-                    <div>
+                    <div
+                        style={{
+                            width: '20vw',
+                            height: '50vh',
+                            overflowWrap: 'break-word',
+                            wordWrap: 'break-word',
+                            overflow: 'hidden',
+                        }}
+                    >
                         <h1>{image.title}</h1>
                         <h2>{image.author.username}</h2>
+                        <p>
+                            Uploaded on{' '}
+                            {new Date(image.uploadDate).toLocaleDateString()}
+                        </p>
                         <p> {image.description}</p>
-                        <p>{image.uploadDate}</p>
                     </div>
                 </div>
             );
