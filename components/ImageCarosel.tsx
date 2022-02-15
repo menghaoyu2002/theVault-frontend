@@ -5,6 +5,9 @@ interface ImageCarouselProps {
     images: IImage[];
 }
 export const ImageCarosel = ({ images }: ImageCarouselProps) => {
+    if (!images.length) {
+        return <h2>No Images Found</h2>;
+    }
     return (
         <div
             style={{
