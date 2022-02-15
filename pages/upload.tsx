@@ -29,6 +29,10 @@ const Upload = () => {
                         'Bearer ' + localStorage.getItem('access_token'),
                 },
             })
+            .then(
+                (res) =>
+                    (document.location.href = `/images/${res.data.imageid}`)
+            )
             .catch((err) => console.log(err));
     };
 
